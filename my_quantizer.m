@@ -1,7 +1,9 @@
 function [xq, centers] = my_quantizer(x, N, min_value, max_value);
 %
 % MY_QUANTIZER function file
-% TODOoooo
+% Implements a uniform quantization algorithm.
+% After the run the quantized signal can be retrieved with: centers(xq(i)),
+% since centers has the correct values and the xq the levels.
 %
 
 %   Copyright 2015 George 'papanikge' Papanikolaou
@@ -20,14 +22,14 @@ s = s(1);
 if min(x) < min_value
     for i=1:s
         if x(i) < min_value
-            x(i) = min_value
+            x(i) = min_value;
         end
     end
 end
 if max(x) > max_value
     for i=1:s
         if x(i) > max_value
-            x(i) = max_value
+            x(i) = max_value;
         end
     end
 end
@@ -45,9 +47,10 @@ for i=2:levels
 end
 
 xq = [];
-% We are using the 'min' function here for finding the corresponding center.
-% It returns the index of the closest value of our value this way.
+% We are not going to calculate the quantization zones at all. We are going to
+% use the 'min' function here for assigning data points to centers. It returns
+% the index of the closest value of our value this way.
 for i=1:s
-    [distance index] = min(abs(centers - x(i)))
+    [distance index] = min(abs(centers - x(i)));
     xq(i) = index;
 end
