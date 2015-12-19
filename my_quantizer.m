@@ -54,3 +54,6 @@ for i=1:s
     [distance index] = min(abs(centers - x(i)));
     xq(i) = index;
 end
+
+% We have it transposed.
+xq = xq';

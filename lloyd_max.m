@@ -102,4 +102,7 @@ D(2) = [];
 centers(1) = [];
 centers(length(centers)) = [];
 
+% We have it transposed.
+xq = xq';
+
 fprintf('Successfully exited after %d iterations.\n', k-2);
