@@ -1,4 +1,4 @@
-function calc_noise()
+function calc_sqnrA()
 %
 % Calculate noise scipt
 % This is just a wrapper for the first requirement. Accepts/Returns nothing.
