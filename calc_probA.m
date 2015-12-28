@@ -1,4 +1,4 @@
-function calc_prob()
+function calc_probA()
 %
 % Calculate probability of data point being outside of the dynamic zone.
 % This is just a wrapper for the first requirement. Accepts/Returns nothing.
